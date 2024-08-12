@@ -74,6 +74,7 @@ export const teamRows = [
   },
 ];
 
+
 // Data To Contact Page
 export const contactColumns = [
   { field: "id", headerName: "ID", width: 33 },
@@ -242,7 +243,6 @@ export const contactRows = [
 
 
 // Data To Invoice Page
-
 export const invoiceColumns = [
   { field: "id", headerName: "ID", width: 33 },
   { field: "registrarId", headerName: "Registrar ID" },
@@ -405,5 +405,22 @@ export const invoiceRows = [
     city: "Colunza",
     zipCode: "1234",
     registrarId: 92197,
+  },
+];
+
+
+// Data To Create User Page
+export const createData = [
+  {
+    value: "Admin",
+    label: "Admin",
+  },
+  {
+    value: "Manger",
+    label: "Manger",
+  },
+  {
+    value: "User",
+    label: "User",
   },
 ];
