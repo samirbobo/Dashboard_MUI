@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { formatDate } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import { FormControlLabel, Paper, Stack, styled, Switch } from "@mui/material";
+import { Stack } from "@mui/material";
 import "../styles/calendar.css";
+import CalendarSidebar from "../components/CalendarSidebar";
 
 // الفانكشن دي بتعرض البيانات الي جواها علي الكلاندر نفسه
 function renderEventContent(eventInfo) {
@@ -18,26 +18,6 @@ function renderEventContent(eventInfo) {
       <b>{eventInfo.timeText}</b>
       <i>{eventInfo.event.title}</i>
     </>
-  );
-}
-
-// الفانكشن دي بتعرض البيانات الي جواها علي السيد بار نفسه
-function SidebarEvent({ event }) {
-  return (
-    <li key={event.id}>
-      <b>
-        {/* بتشوف التاسك اتسجلت بتاريخ كام وضيفه */}
-        {formatDate(event.start, {
-          year: "numeric",
-          month: "numeric",
-          day: "numeric",
-          hour: "numeric",
-          minute: "2-digit",
-        })}
-      </b>
-      {/* اسم التاسك */}
-      <i>{event.title}</i>
-    </li>
   );
 }
 
@@ -94,7 +74,7 @@ export default function Calendar() {
 
   return (
     <Stack className="calendar" direction={"row"}>
-      <Sidebar
+      <CalendarSidebar
         weekendsVisible={weekendsVisible}
         handleWeekendsToggle={handleWeekendsToggle}
         currentEvents={currentEvents}
@@ -121,67 +101,5 @@ export default function Calendar() {
         />
       </div>
     </Stack>
-  );
-}
-
-// عشان نعمل اسوتش جديده باستخدام مكتبه ماتريال يو اي
-const CalendarSwitch = styled(Switch)(({ theme }) => ({
-  padding: 8,
-  "& .MuiSwitch-track": {
-    borderRadius: 22 / 2,
-    "&::before, &::after": {
-      content: '""',
-      position: "absolute",
-      top: "50%",
-      transform: "translateY(-50%)",
-      width: 16,
-      height: 16,
-    },
-    "&::before": {
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-        theme.palette.getContrastText(theme.palette.primary.main)
-      )}" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>')`,
-      left: 12,
-    },
-    "&::after": {
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-        theme.palette.getContrastText(theme.palette.primary.main)
-      )}" d="M19,13H5V11H19V13Z" /></svg>')`,
-      right: 12,
-    },
-  },
-  "& .MuiSwitch-thumb": {
-    boxShadow: "none",
-    width: 16,
-    height: 16,
-    margin: 2,
-  },
-}));
-
-function Sidebar({ weekendsVisible, handleWeekendsToggle, currentEvents }) {
-  return (
-    <Paper className="demo-app-sidebar" variant="elevation">
-      <div className="demo-app-sidebar-section">
-        <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>
-          All Events ({currentEvents.length})
-        </h2>
-
-        <FormControlLabel
-          control={
-            <CalendarSwitch
-              checked={weekendsVisible}
-              onChange={handleWeekendsToggle}
-            />
-          }
-          label="Weekends"
-        />
-
-        <ul>
-          {currentEvents.map((event) => (
-            <SidebarEvent key={event.id} event={event} />
-          ))}
-        </ul>
-      </div>
-    </Paper>
   );
 }
