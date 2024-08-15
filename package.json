@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -20,6 +20,9 @@
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
     "@mui/x-data-grid": "^7.11.1",
+    "@nivo/bar": "^0.87.0",
+    "@nivo/line": "^0.87.0",
+    "@nivo/pie": "^0.87.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.2",

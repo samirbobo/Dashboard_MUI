@@ -74,7 +74,6 @@ export const teamRows = [
   },
 ];
 
-
 // Data To Contact Page
 export const contactColumns = [
   { field: "id", headerName: "ID", width: 33 },
@@ -240,7 +239,6 @@ export const contactRows = [
     registrarId: 92197,
   },
 ];
-
 
 // Data To Invoice Page
 export const invoiceColumns = [
@@ -408,7 +406,6 @@ export const invoiceRows = [
   },
 ];
 
-
 // Data To Create User Page
 export const createData = [
   {
@@ -422,5 +419,359 @@ export const createData = [
   {
     value: "User",
     label: "User",
+  },
+];
+
+// Data To Bar Chart Page
+export const barData = [
+  {
+    year: 2019,
+    Spain: 900,
+    France: 1400,
+    Germany: 1700,
+  },
+
+  {
+    year: 2020,
+    Spain: 1000,
+    France: 1500,
+    Germany: 1800,
+  },
+
+  {
+    year: 2021,
+    Spain: 1100,
+    France: 1600,
+    Germany: 1900,
+  },
+
+  {
+    year: 2022,
+    Spain: 1200,
+    France: 1700,
+    Germany: 2000,
+  },
+
+  {
+    year: 2023,
+    Spain: 1260,
+    France: 1709,
+    Germany: 2080,
+  },
+
+  {
+    year: 2024,
+    Spain: 1260,
+    France: 1766.92,
+    Germany: 2080,
+  },
+];
+
+// Data To Pie Chart Page
+export const pieData = [
+  {
+    id: "html",
+    label: "html",
+    value: 434,
+    color: "hsl(172, 70%, 50%)",
+  },
+  {
+    id: "css",
+    label: "css",
+    value: 401,
+    color: "hsl(41, 70%, 50%)",
+  },
+  {
+    id: "javascript",
+    label: "javascript",
+    value: 343,
+    color: "hsl(172, 70%, 50%)",
+  },
+  {
+    id: "React",
+    label: "React",
+    value: 333,
+    color: "hsl(107, 70%, 50%)",
+  },
+  {
+    id: "material UI",
+    label: "material UI",
+    value: 333,
+    color: "hsl(219, 70%, 50%)",
+  },
+];
+
+
+// Data To Line Chart Page
+export const lineData = [
+  {
+    id: "japan",
+    color: "hsl(14, 70%, 50%)",
+    data: [
+      {
+        x: "plane",
+        y: 227,
+      },
+      {
+        x: "helicopter",
+        y: 52,
+      },
+      {
+        x: "boat",
+        y: 0,
+      },
+      {
+        x: "train",
+        y: 229,
+      },
+      {
+        x: "subway",
+        y: 176,
+      },
+      {
+        x: "bus",
+        y: 113,
+      },
+      {
+        x: "car",
+        y: 71,
+      },
+      {
+        x: "moto",
+        y: 277,
+      },
+      {
+        x: "bicycle",
+        y: 14,
+      },
+      {
+        x: "horse",
+        y: 201,
+      },
+      {
+        x: "skateboard",
+        y: 187,
+      },
+      {
+        x: "others",
+        y: 91,
+      },
+    ],
+  },
+  {
+    id: "france",
+    color: "hsl(15, 70%, 50%)",
+    data: [
+      {
+        x: "plane",
+        y: 242,
+      },
+      {
+        x: "helicopter",
+        y: 94,
+      },
+      {
+        x: "boat",
+        y: 133,
+      },
+      {
+        x: "train",
+        y: 94,
+      },
+      {
+        x: "subway",
+        y: 142,
+      },
+      {
+        x: "bus",
+        y: 80,
+      },
+      {
+        x: "car",
+        y: 190,
+      },
+      {
+        x: "moto",
+        y: 73,
+      },
+      {
+        x: "bicycle",
+        y: 66,
+      },
+      {
+        x: "horse",
+        y: 233,
+      },
+      {
+        x: "skateboard",
+        y: 83,
+      },
+      {
+        x: "others",
+        y: 54,
+      },
+    ],
+  },
+  {
+    id: "us",
+    color: "hsl(114, 70%, 50%)",
+    data: [
+      {
+        x: "plane",
+        y: 80,
+      },
+      {
+        x: "helicopter",
+        y: 55,
+      },
+      {
+        x: "boat",
+        y: 52,
+      },
+      {
+        x: "train",
+        y: 139,
+      },
+      {
+        x: "subway",
+        y: 110,
+      },
+      {
+        x: "bus",
+        y: 9,
+      },
+      {
+        x: "car",
+        y: 113,
+      },
+      {
+        x: "moto",
+        y: 121,
+      },
+      {
+        x: "bicycle",
+        y: 96,
+      },
+      {
+        x: "horse",
+        y: 17,
+      },
+      {
+        x: "skateboard",
+        y: 97,
+      },
+      {
+        x: "others",
+        y: 82,
+      },
+    ],
+  },
+  {
+    id: "germany",
+    color: "hsl(30, 70%, 50%)",
+    data: [
+      {
+        x: "plane",
+        y: 146,
+      },
+      {
+        x: "helicopter",
+        y: 227,
+      },
+      {
+        x: "boat",
+        y: 100,
+      },
+      {
+        x: "train",
+        y: 165,
+      },
+      {
+        x: "subway",
+        y: 23,
+      },
+      {
+        x: "bus",
+        y: 61,
+      },
+      {
+        x: "car",
+        y: 100,
+      },
+      {
+        x: "moto",
+        y: 177,
+      },
+      {
+        x: "bicycle",
+        y: 41,
+      },
+      {
+        x: "horse",
+        y: 202,
+      },
+      {
+        x: "skateboard",
+        y: 236,
+      },
+      {
+        x: "others",
+        y: 176,
+      },
+    ],
+  },
+  {
+    id: "norway",
+    color: "hsl(121, 70%, 50%)",
+    data: [
+      {
+        x: "plane",
+        y: 11,
+      },
+      {
+        x: "helicopter",
+        y: 106,
+      },
+      {
+        x: "boat",
+        y: 211,
+      },
+      {
+        x: "train",
+        y: 276,
+      },
+      {
+        x: "subway",
+        y: 11,
+      },
+      {
+        x: "bus",
+        y: 250,
+      },
+      {
+        x: "car",
+        y: 173,
+      },
+      {
+        x: "moto",
+        y: 293,
+      },
+      {
+        x: "bicycle",
+        y: 264,
+      },
+      {
+        x: "horse",
+        y: 96,
+      },
+      {
+        x: "skateboard",
+        y: 233,
+      },
+      {
+        x: "others",
+        y: 250,
+      },
+    ],
   },
 ];
