@@ -151,7 +151,7 @@ export default function Navbar({ open, handleDrawerOpen, setMode }) {
             <DarkModeOutlinedIcon />
           )}
         </IconButton>
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color={theme.palette.text.primary}>
           {theme.palette.mode === "light" ? "Light " : "Dark "}
           Mode
         </Typography>
@@ -164,7 +164,7 @@ export default function Navbar({ open, handleDrawerOpen, setMode }) {
         >
           <NotificationsOutlinedIcon />
         </IconButton>
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color={theme.palette.text.primary}>
           Notifications
         </Typography>
       </MenuItem>
@@ -172,7 +172,7 @@ export default function Navbar({ open, handleDrawerOpen, setMode }) {
         <IconButton size="medium" aria-label="show new mails" color="inherit">
           <SettingsOutlinedIcon />
         </IconButton>
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color={theme.palette.text.primary}>
           Settings
         </Typography>
       </MenuItem>
@@ -186,7 +186,7 @@ export default function Navbar({ open, handleDrawerOpen, setMode }) {
         >
           <Person2OutlinedIcon />
         </IconButton>
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color={theme.palette.text.primary}>
           Profile
         </Typography>
       </MenuItem>
