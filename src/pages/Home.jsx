@@ -1,6 +1,7 @@
 import { DownloadOutlined } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import DashbordRow1 from "../components/DashbordRow1";
+import DashbordRow2 from "../components/DashbordRow2";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       </Box>
 
       <DashbordRow1 />
+      <DashbordRow2 />
     </Box>
   );
 }

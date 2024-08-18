@@ -2,11 +2,11 @@ import { Box } from "@mui/material";
 import { ResponsiveLine } from "@nivo/line";
 import { lineData } from "../data";
 import { useTheme } from "@emotion/react";
-export default function Line() {
+export default function Line({ isDashbord = false }) {
   const theme = useTheme();
 
   return (
-    <Box height={"75vh"}>
+    <Box height={isDashbord ? "280px" : "75vh"}>
       <ResponsiveLine
         data={lineData}
         theme={{
@@ -47,7 +47,7 @@ export default function Line() {
           grid: {
             line: {
               stroke: theme.palette.divider, // لون الخطوط الي في ظهر الرسمه
-              strokeWidth: 1,
+              strokeWidth: isDashbord ? 0 : 1,
             },
           },
           legends: {
@@ -135,7 +135,7 @@ export default function Line() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Transportation",
+          legend: isDashbord ? null : "Transportation",
           legendOffset: 46,
           legendPosition: "middle",
           truncateTickAt: 0,
@@ -144,7 +144,7 @@ export default function Line() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Count",
+          legend: isDashbord ? null : "Count",
           legendOffset: -45,
           legendPosition: "middle",
           truncateTickAt: 0,
