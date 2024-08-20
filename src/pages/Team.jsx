@@ -7,6 +7,7 @@ import {
   LockOpenOutlined,
   SecurityOutlined,
 } from "@mui/icons-material";
+import Header from "../components/Header";
 
 export default function Team() {
   const theme = useTheme();
@@ -97,6 +98,7 @@ export default function Team() {
 
   return (
     <Box sx={{ height: 600, width: "98%", mx: "auto" }}>
+      <Header title={"TEAM"} subTitle={"Managing the Team Members"} />
       <DataGrid rows={teamRows} columns={columns} />
     </Box>
   );

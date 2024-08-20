@@ -3,12 +3,12 @@ import { ResponsiveBar } from "@nivo/bar";
 import { barData } from "../data";
 import { Box, useTheme } from "@mui/material";
 
-export default function Bar() {
+export default function Bar({ isDashbord = false }) {
   const theme = useTheme();
 
   return (
     // لازم تدي ارتفاع للرسمه بتاعتك عشان تظهر من غيرها الكود صح بس مش هتظهر
-    <Box sx={{ height: "75vh" }}>
+    <Box sx={{ height: isDashbord ? "300px" : "75vh" }}>
       <ResponsiveBar
         data={barData} // دي الداتا الي بيتم رسمها لو مش موجوده الرسمه مش هتظهر لان مفيش بيانات ترسمها وبتكون ارايه
         keys={["Spain", "France", "Germany"]} // دي المسميات الي جواه الاراي لازم يكونوا متطابقين
@@ -128,40 +128,6 @@ export default function Bar() {
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors={{ scheme: "paired" }}
-        defs={[
-          {
-            id: "dots",
-            type: "patternDots",
-            background: "inherit",
-            color: "#38bcb2",
-            size: 4,
-            padding: 1,
-            stagger: true,
-          },
-          {
-            id: "lines",
-            type: "patternLines",
-            background: "inherit",
-            color: "#eed312",
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10,
-          },
-        ]}
-        fill={[
-          {
-            match: {
-              id: "fries",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "sandwich",
-            },
-            id: "lines",
-          },
-        ]}
         borderColor={{
           from: "color",
           modifiers: [["darker", "1.6"]],
@@ -173,7 +139,7 @@ export default function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Year", // اسم المحور
+          legend: isDashbord ? null : "Year", // اسم المحور
           legendPosition: "middle",
           legendOffset: 40, // بعد اسم محور اكس عن المحور نفسه
           truncateTickAt: 0,
@@ -183,7 +149,7 @@ export default function Bar() {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Salary/Month", // اسم المحور وايه
+          legend: isDashbord ? null : "Salary/Month", // اسم المحور وايه
           legendPosition: "middle",
           legendOffset: -50, // بعد الاسم عن المحور وايه
           truncateTickAt: 0,

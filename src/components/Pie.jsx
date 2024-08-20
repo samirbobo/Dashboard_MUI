@@ -3,10 +3,10 @@ import { Box } from "@mui/material";
 import { ResponsivePie } from "@nivo/pie";
 import { pieData } from "../data";
 
-export default function Pie() {
+export default function Pie({ isDashbord = false }) {
   const theme = useTheme();
   return (
-    <Box height={"75vh"}>
+    <Box height={isDashbord ? "200px" : "75vh"}>
       <ResponsivePie
         data={pieData}
         theme={{
@@ -118,8 +118,12 @@ export default function Pie() {
             tableCellValue: {},
           },
         }}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        innerRadius={0.5}
+        margin={
+          isDashbord
+            ? { top: 10, right: 0, bottom: 10, left: 0 }
+            : { top: 40, right: 80, bottom: 80, left: 80 }
+        }
+        innerRadius={isDashbord ? 0.8 : 0.5}
         padAngle={0.7}
         cornerRadius={3}
         activeOuterRadiusOffset={8}
@@ -128,6 +132,8 @@ export default function Pie() {
           from: "color",
           modifiers: [["darker", 0.2]],
         }}
+        enableArcLabels={isDashbord ? false : true}
+        enableArcLinkLabels={isDashbord ? false : true}
         arcLinkLabelsSkipAngle={10}
         arcLinkLabelsTextColor={theme.palette.text.primary} // لون الكلام الي طالع من كل جزء في الرسمه علي شكل سهم
         arcLinkLabelsThickness={2}
@@ -156,81 +162,35 @@ export default function Pie() {
             lineWidth: 6,
           },
         ]}
-        fill={[
-          {
-            match: {
-              id: "ruby",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "c",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "go",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "python",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "scala",
-            },
-            id: "lines",
-          },
-          {
-            match: {
-              id: "lisp",
-            },
-            id: "lines",
-          },
-          {
-            match: {
-              id: "elixir",
-            },
-            id: "lines",
-          },
-          {
-            match: {
-              id: "javascript",
-            },
-            id: "lines",
-          },
-        ]}
-        legends={[
-          {
-            anchor: "bottom",
-            direction: "row",
-            justify: false,
-            translateX: 0,
-            translateY: 56,
-            itemsSpacing: 0,
-            itemWidth: 100,
-            itemHeight: 18,
-            itemTextColor: theme.palette.text.primary,
-            itemDirection: "left-to-right",
-            itemOpacity: 1,
-            symbolSize: 18,
-            symbolShape: "circle",
-            effects: [
-              {
-                on: "hover",
-                style: {
-                  itemTextColor: theme.palette.text.disabled,
+        legends={
+          isDashbord
+            ? []
+            : [
+                {
+                  anchor: "bottom",
+                  direction: "row",
+                  justify: false,
+                  translateX: 0,
+                  translateY: 56,
+                  itemsSpacing: 0,
+                  itemWidth: 100,
+                  itemHeight: 18,
+                  itemTextColor: theme.palette.text.primary,
+                  itemDirection: "left-to-right",
+                  itemOpacity: 1,
+                  symbolSize: 18,
+                  symbolShape: "circle",
+                  effects: [
+                    {
+                      on: "hover",
+                      style: {
+                        itemTextColor: theme.palette.text.disabled,
+                      },
+                    },
+                  ],
                 },
-              },
-            ],
-          },
-        ]}
+              ]
+        }
       />
     </Box>
   );

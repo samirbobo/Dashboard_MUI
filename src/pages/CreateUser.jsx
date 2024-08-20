@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import { createData } from "../data";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Header from "../components/Header";
 
 export default function CreateUser() {
   const [open, setOpen] = useState(false);
@@ -33,110 +34,116 @@ export default function CreateUser() {
     /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
   return (
-    <Box
-      onSubmit={handleSubmit(onSubmit)}
-      component="form"
-      noValidate
-      autoComplete="off"
-      sx={{ display: "flex", flexDirection: "column", gap: 3 }}
-    >
-      <Stack direction={{ xs: "column", sm: "row" }} gap={2}>
-        <TextField
-          // هنا باخد الايرور الي ممكن يرجعلي من المكتبه في حاله ان في بيانات داخله غلط في الانبوت بتاعي
-          // وبستخدم الفانكشن بتاعت البولين عشان اضمن ان القيمه الي هترجع هي صح او خطاء ويحسن من جوده الكود
-          error={Boolean(errors.firstName)}
-          // لو صح الايرور الي بيساعد الناس مش هيظهر لو غلط هيظهر عشان يفهم المستخدم الغلط فين
-          helperText={
-            // eslint-disable-next-line no-extra-boolean-cast
-            Boolean(errors.firstName)
-              ? "This field is required & min 3 character"
-              : null
-          }
-          // هنا حطيت اسم الانبوت والشروط الي لازم تتحقق عشان ميحصلش اخطاء
-          {...register("firstName", { required: true, minLength: 3 })}
-          sx={{ flex: "1" }}
-          label="First Name"
-          variant="filled"
-        />
-        <TextField
-          error={Boolean(errors.lastName)}
-          helperText={
-            // eslint-disable-next-line no-extra-boolean-cast
-            Boolean(errors.lastName)
-              ? "This field is required & min 3 character"
-              : null
-          }
-          {...register("lastName", { required: true, minLength: 3 })}
-          sx={{ flex: "1" }}
-          label="Last Name"
-          variant="filled"
-        />
-      </Stack>
+    <Box>
+      <Header title={"CREATE USER"} subTitle={"Create a New User Profile"} />
 
-      <TextField
-        error={Boolean(errors.email)}
-        helperText={
-          // eslint-disable-next-line no-extra-boolean-cast
-          Boolean(errors.email) ? "Please provide a valid email address" : null
-        }
-        {...register("email", { required: true, pattern: regEmail })}
-        label="Email"
-        variant="filled"
-      />
-
-      <TextField
-        error={Boolean(errors.phone)}
-        helperText={
-          // eslint-disable-next-line no-extra-boolean-cast
-          Boolean(errors.phone) ? "Please provide a valid Phone number" : null
-        }
-        {...register("phone", { required: true, pattern: phoneRegExp })}
-        label="Contact Number"
-        variant="filled"
-      />
-
-      <TextField label="Address 1" variant="filled" />
-      <TextField label="Address 2" variant="filled" />
-
-      {/* ديه الطريقه الاولي لاختيار الاشياء علي شكل سليكت */}
-      <TextField
-        variant="filled"
-        id="outlined-select-currency"
-        select
-        label="Role"
-        defaultValue="User"
+      <Box
+        onSubmit={handleSubmit(onSubmit)}
+        component="form"
+        noValidate
+        autoComplete="off"
+        sx={{ display: "flex", flexDirection: "column", gap: 3 }}
       >
-        {createData.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
-          </MenuItem>
-        ))}
-      </TextField>
-
-      <Box sx={{ textAlign: "right" }}>
-        <Button
-          type="submit"
-          variant="contained"
-          sx={{ textTransform: "capitalize" }}
-        >
-          create new user
-        </Button>
-
-        <Snackbar
-          open={open}
-          autoHideDuration={3000}
-          anchorOrigin={{ vertical: "top", horizontal: "right" }}
-          onClose={handleClose}
-        >
-          <Alert
-            onClose={handleClose}
-            severity="success"
+        <Stack direction={{ xs: "column", sm: "row" }} gap={2}>
+          <TextField
+            // هنا باخد الايرور الي ممكن يرجعلي من المكتبه في حاله ان في بيانات داخله غلط في الانبوت بتاعي
+            // وبستخدم الفانكشن بتاعت البولين عشان اضمن ان القيمه الي هترجع هي صح او خطاء ويحسن من جوده الكود
+            error={Boolean(errors.firstName)}
+            // لو صح الايرور الي بيساعد الناس مش هيظهر لو غلط هيظهر عشان يفهم المستخدم الغلط فين
+            helperText={
+              // eslint-disable-next-line no-extra-boolean-cast
+              Boolean(errors.firstName)
+                ? "This field is required & min 3 character"
+                : null
+            }
+            // هنا حطيت اسم الانبوت والشروط الي لازم تتحقق عشان ميحصلش اخطاء
+            {...register("firstName", { required: true, minLength: 3 })}
+            sx={{ flex: "1" }}
+            label="First Name"
             variant="filled"
-            sx={{ width: "100%", color: "white" }}
+          />
+          <TextField
+            error={Boolean(errors.lastName)}
+            helperText={
+              // eslint-disable-next-line no-extra-boolean-cast
+              Boolean(errors.lastName)
+                ? "This field is required & min 3 character"
+                : null
+            }
+            {...register("lastName", { required: true, minLength: 3 })}
+            sx={{ flex: "1" }}
+            label="Last Name"
+            variant="filled"
+          />
+        </Stack>
+
+        <TextField
+          error={Boolean(errors.email)}
+          helperText={
+            // eslint-disable-next-line no-extra-boolean-cast
+            Boolean(errors.email)
+              ? "Please provide a valid email address"
+              : null
+          }
+          {...register("email", { required: true, pattern: regEmail })}
+          label="Email"
+          variant="filled"
+        />
+
+        <TextField
+          error={Boolean(errors.phone)}
+          helperText={
+            // eslint-disable-next-line no-extra-boolean-cast
+            Boolean(errors.phone) ? "Please provide a valid Phone number" : null
+          }
+          {...register("phone", { required: true, pattern: phoneRegExp })}
+          label="Contact Number"
+          variant="filled"
+        />
+
+        <TextField label="Address 1" variant="filled" />
+        <TextField label="Address 2" variant="filled" />
+
+        {/* ديه الطريقه الاولي لاختيار الاشياء علي شكل سليكت */}
+        <TextField
+          variant="filled"
+          id="outlined-select-currency"
+          select
+          label="Role"
+          defaultValue="User"
+        >
+          {createData.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+
+        <Box sx={{ textAlign: "right" }}>
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{ textTransform: "capitalize" }}
           >
-            This is a success Alert inside a Snackbar!
-          </Alert>
-        </Snackbar>
+            create new user
+          </Button>
+
+          <Snackbar
+            open={open}
+            autoHideDuration={3000}
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            onClose={handleClose}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              variant="filled"
+              sx={{ width: "100%", color: "white" }}
+            >
+              This is a success Alert inside a Snackbar!
+            </Alert>
+          </Snackbar>
+        </Box>
       </Box>
     </Box>
   );
