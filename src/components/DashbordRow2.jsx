@@ -14,7 +14,7 @@ export default function DashbordRow2() {
   const theme = useTheme();
 
   return (
-    <Stack direction={"row"} flexWrap={"wrap"} gap={1.2} mt={3}>
+    <Stack direction={"row"} flexWrap={"wrap"} gap={1.2} mt={1}>
       <Paper sx={{ minWidth: "400px", flexGrow: 1 }}>
         <Stack
           alignItems={"center"}
@@ -51,7 +51,6 @@ export default function DashbordRow2() {
           borderRadius: "4px",
           minWidth: "280px",
           maxHeight: 355,
-          border: "2px solid #f00",
         }}
       >
         <Paper>

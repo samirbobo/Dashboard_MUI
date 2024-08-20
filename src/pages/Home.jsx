@@ -1,12 +1,24 @@
 import { DownloadOutlined } from "@mui/icons-material";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import DashbordRow1 from "../components/DashbordRow1";
 import DashbordRow2 from "../components/DashbordRow2";
+import DashbordRow3 from "../components/DashbordRow3";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
     <Box>
-      <Box sx={{ mb: 1.3, textAlign: "right" }}>
+      <Stack
+        direction={"row"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
+        <Header
+          title={"DASHBOARD"}
+          subTitle={"Welcome to your dashboard"}
+          isDashbord={true}
+        />
+
         <Button
           variant="contained"
           sx={{ textTransform: "capitalize", p: "6px 8px" }}
@@ -14,10 +26,11 @@ export default function Home() {
           <DownloadOutlined />
           Download Reports
         </Button>
-      </Box>
+      </Stack>
 
       <DashbordRow1 />
       <DashbordRow2 />
+      <DashbordRow3 />
     </Box>
   );
 }

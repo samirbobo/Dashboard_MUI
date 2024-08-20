@@ -1,5 +1,11 @@
 import Geo from "../components/Geo";
+import Header from "../components/Header";
 
 export default function Geography() {
-  return <Geo />;
+  return (
+    <>
+      <Header title={"Geography"} subTitle={"Simple Geography Chart"} />
+      <Geo />
+    </>
+  );
 }

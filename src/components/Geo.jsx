@@ -3,13 +3,13 @@ import { ResponsiveChoropleth } from "@nivo/geo";
 import { geoData, geoFeatures } from "../data";
 import { useTheme } from "@emotion/react";
 
-export default function Geo() {
-    const theme = useTheme();
+export default function Geo({ isDashbord = false }) {
+  const theme = useTheme();
   return (
     <Box
       sx={{
-        height: "75vh",
-        border: `1px solid ${theme.palette.text.primary}`,
+        height: isDashbord ? "350px" : "75vh",
+        border: isDashbord ? null : `1px solid ${theme.palette.text.primary}`,
         borderRadius: "0.25rem",
       }}
     >
@@ -131,38 +131,42 @@ export default function Geo() {
         unknownColor="#666666"
         label="properties.name"
         valueFormat=".2s"
-        projectionScale={140}
+        projectionScale={isDashbord ? 80 : 140}
         projectionTranslation={[0.5, 0.5]}
         projectionRotation={[0, 0, 0]}
         enableGraticule={false}
         graticuleLineColor="#dddddd"
-        borderWidth={0.1}
+        borderWidth={1.1}
         borderColor="#fff"
-        legends={[
-          {
-            anchor: "bottom-left",
-            direction: "column",
-            justify: true,
-            translateX: 20,
-            translateY: -10,
-            itemsSpacing: 0,
-            itemWidth: 94,
-            itemHeight: 18,
-            itemDirection: "left-to-right",
-            itemTextColor: theme.palette.text.primary,
-            itemOpacity: 0.85,
-            symbolSize: 18,
-            effects: [
-              {
-                on: "hover",
-                style: {
+        legends={
+          isDashbord
+            ? []
+            : [
+                {
+                  anchor: "bottom-left",
+                  direction: "column",
+                  justify: true,
+                  translateX: 20,
+                  translateY: -10,
+                  itemsSpacing: 0,
+                  itemWidth: 94,
+                  itemHeight: 18,
+                  itemDirection: "left-to-right",
                   itemTextColor: theme.palette.text.primary,
-                  itemOpacity: 1,
+                  itemOpacity: 0.85,
+                  symbolSize: 18,
+                  effects: [
+                    {
+                      on: "hover",
+                      style: {
+                        itemTextColor: theme.palette.text.primary,
+                        itemOpacity: 1,
+                      },
+                    },
+                  ],
                 },
-              },
-            ],
-          },
-        ]}
+              ]
+        }
       />
     </Box>
   );
