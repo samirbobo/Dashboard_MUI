@@ -7,7 +7,13 @@ export default function DashbordRow3() {
   const theme = useTheme();
   return (
     <Box sx={{ display: "flex", gap: 1.5, mt: 1.5, flexWrap: "wrap" }}>
-      <Paper sx={{ width: "28%", flexGrow: 1, minWidth: "400px" }}>
+      <Paper
+        sx={{
+          width: "28%",
+          flexGrow: 1,
+          minWidth: { xs: "180px", sm: "400px" },
+        }}
+      >
         <Typography
           color={theme.palette.secondary.main}
           sx={{ padding: "30px 30px 0 30px" }}
@@ -27,7 +33,13 @@ export default function DashbordRow3() {
         </Typography>
       </Paper>
 
-      <Paper sx={{ width: "33%", flexGrow: 1, minWidth: "400px" }}>
+      <Paper
+        sx={{
+          width: "33%",
+          flexGrow: 1,
+          minWidth: { xs: "180px", sm: "400px" },
+        }}
+      >
         <Typography
           color={theme.palette.secondary.main}
           sx={{ padding: "30px 30px 0 30px" }}
@@ -40,7 +52,13 @@ export default function DashbordRow3() {
         <Bar isDashbord={true} />
       </Paper>
 
-      <Paper sx={{ width: "33%", flexGrow: 1, minWidth: "400px" }}>
+      <Paper
+        sx={{
+          width: "33%",
+          flexGrow: 1,
+          minWidth: { xs: "180px", sm: "400px" },
+        }}
+      >
         <Geo isDashbord={true} />
       </Paper>
     </Box>

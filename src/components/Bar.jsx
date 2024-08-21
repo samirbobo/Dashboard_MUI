@@ -8,7 +8,9 @@ export default function Bar({ isDashbord = false }) {
 
   return (
     // لازم تدي ارتفاع للرسمه بتاعتك عشان تظهر من غيرها الكود صح بس مش هتظهر
-    <Box sx={{ height: isDashbord ? "300px" : "75vh" }}>
+    <Box
+      sx={{ height: isDashbord ? "300px" : "75vh", width: "calc(100% - 2rem)", mx: "auto" }}
+    >
       <ResponsiveBar
         data={barData} // دي الداتا الي بيتم رسمها لو مش موجوده الرسمه مش هتظهر لان مفيش بيانات ترسمها وبتكون ارايه
         keys={["Spain", "France", "Germany"]} // دي المسميات الي جواه الاراي لازم يكونوا متطابقين
