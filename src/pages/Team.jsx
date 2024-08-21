@@ -96,10 +96,11 @@ export default function Team() {
     },
   ];
 
+  // 2rem padding from right to left from main element
   return (
-    <Box sx={{ height: 600, width: "98%", mx: "auto" }}>
+    <Box sx={{ height: 600, width: "calc(100% - 2rem)", mx: "auto" }}>
       <Header title={"TEAM"} subTitle={"Managing the Team Members"} />
-      <DataGrid rows={teamRows} columns={columns} />
+      <DataGrid rows={teamRows} columns={columns} sx={{mb: 2}} />
     </Box>
   );
 }

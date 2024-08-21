@@ -6,7 +6,7 @@ export default function Line({ isDashbord = false }) {
   const theme = useTheme();
 
   return (
-    <Box height={isDashbord ? "280px" : "75vh"}>
+    <Box sx={{ height: isDashbord ? "280px" : "75vh", width: "calc(100% - 2rem)", mx: "auto" }}>
       <ResponsiveLine
         data={lineData}
         theme={{

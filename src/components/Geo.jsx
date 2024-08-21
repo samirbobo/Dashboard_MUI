@@ -9,6 +9,8 @@ export default function Geo({ isDashbord = false }) {
     <Box
       sx={{
         height: isDashbord ? "350px" : "75vh",
+        width: "calc(100% - 2rem)",
+        mx: "auto",
         border: isDashbord ? null : `1px solid ${theme.palette.text.primary}`,
         borderRadius: "0.25rem",
       }}

@@ -15,7 +15,7 @@ export default function DashbordRow2() {
 
   return (
     <Stack direction={"row"} flexWrap={"wrap"} gap={1.2} mt={1}>
-      <Paper sx={{ minWidth: "400px", flexGrow: 1 }}>
+      <Paper sx={{ minWidth: "180px", flexGrow: 1 }}>
         <Stack
           alignItems={"center"}
           direction={"row"}
@@ -49,7 +49,7 @@ export default function DashbordRow2() {
           flexGrow: 1,
           overflow: "auto",
           borderRadius: "4px",
-          minWidth: "280px",
+          minWidth: "180px",
           maxHeight: 355,
         }}
       >

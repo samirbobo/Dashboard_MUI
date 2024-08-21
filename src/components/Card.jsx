@@ -11,7 +11,7 @@ export default function Card({ icon, title, subTitle, data, scheme, value }) {
         display: "flex",
         flexGrow: 1,
         justifyContent: "space-between",
-        minWidth: "333px",
+        minWidth: { xs: "180px", sm: "333px" },
         p: 1.5,
       }}
     >

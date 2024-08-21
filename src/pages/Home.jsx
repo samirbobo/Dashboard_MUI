@@ -12,6 +12,7 @@ export default function Home() {
         direction={"row"}
         justifyContent={"space-between"}
         alignItems={"center"}
+        flexWrap={"wrap"}
       >
         <Header
           title={"DASHBOARD"}
@@ -21,7 +22,7 @@ export default function Home() {
 
         <Button
           variant="contained"
-          sx={{ textTransform: "capitalize", p: "6px 8px" }}
+          sx={{ textTransform: "capitalize", p: "6px 8px", mb: 1 }}
         >
           <DownloadOutlined />
           Download Reports

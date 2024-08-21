@@ -6,7 +6,7 @@ import { pieData } from "../data";
 export default function Pie({ isDashbord = false }) {
   const theme = useTheme();
   return (
-    <Box height={isDashbord ? "200px" : "75vh"}>
+    <Box sx={{ height: isDashbord ? "200px" : "75vh", width: "calc(100% - 2rem)", mx: "auto" }}>
       <ResponsivePie
         data={pieData}
         theme={{
