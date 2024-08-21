@@ -25,6 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { Avatar, Box, Typography, Tooltip } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { grey } from "@mui/material/colors";
+import imgSamir from "../imges/samir.jpg";
 
 const drawerWidth = 240;
 
@@ -152,13 +153,13 @@ export default function Sidebar({ open, handleDrawerClose }) {
             border: "2px solid gray",
             transition: "0.25s linear",
           }}
-          src="https://media.allure.com/photos/5a26c1d8753d0c2eea9df033/3:4/w_1262,h_1683,c_limit/mostbeautiful.jpg"
+          src={imgSamir}
         />
         <Typography
           align="center"
           sx={{ fontSize: open ? "17px" : "0px", transition: "0.25s linear" }}
         >
-          Layla Ali
+          Samir Elanany
         </Typography>
         <Typography
           align="center"
